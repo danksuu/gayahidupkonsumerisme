@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek Website Akademis - Hidup Konsumtif & Kolonialisme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Gaya Kustom dari file utama */
+        :root {
+            --color-primary: #1e3a8a; /* Biru Tua (Navy Blue) */
+            --color-secondary: #fcd34d; /* Gold/Kuning Tua */
+            --color-background: #f9fafb; /* Latar Belakang Terang */
+            --color-text: #1f2937; /* Teks Gelap */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background); 
+            color: var(--color-text); 
+            scroll-behavior: smooth;
+            padding-top: 80px; 
+        }
+
+        /* Navbar Background */
+        .header-bg {
+            background-color: var(--color-primary);
+        }
+
+        /* Penekanan Judul Mirip Garis Bawah Bootstrap */
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            color: var(--color-primary); 
+            font-weight: 800;
+        }
+
+        /* Garis bawah di tengah */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%; 
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 100px;
+            height: 5px; 
+            background-color: var(--color-secondary);
+            border-radius: 9999px;
+        }
+
+        .nav-link {
+            color: white;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            padding-bottom: 4px;
+        }
+
+        .nav-link:hover {
+            color: var(--color-secondary);
+            border-bottom: 2px solid var(--color-secondary);
+        }
+
+        /* Style untuk Logo Serviam */
+        .serviam-logo-link {
+            display: inline-block;
+            border: 4px solid var(--color-secondary); 
+            border-radius: 8px; 
+            background-color: white; 
+            padding: 5px; 
+            line-height: 0; 
+            transition: all 0.3s ease-in-out; 
+        }
+
+        .serviam-logo-link.shrunk {
+            padding: 3px; 
+            border: 2px solid var(--color-secondary); 
+        }
+        
+        .serviam-logo-img {
+            height: 70px; 
+            width: auto;
+            display: block;
+            transition: height 0.3s ease-in-out; 
+        }
+
+        .serviam-logo-img.shrunk {
+            height: 40px; 
+        }
+        
+        /* Style Kartu Konten */
+        .content-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.2), 0 4px 6px -2px rgba(30, 58, 138, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Gaya Khusus untuk Foto Anggota */
+        .member-photo {
+            width: 120px; 
+            height: 120px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 4px solid var(--color-secondary); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+            margin: 0 auto 1rem auto; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="main-header" class="sticky top-0 z-50 header-bg shadow-2xl transition duration-300 ease-in-out transform">
+        <nav id="main-nav" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-start items-center transition-all duration-300 ease-in-out"> 
+            
+            <a href="#title-content" id="serviam-logo-link" class="serviam-logo-link">
+                <img id="serviam-logo-img" src="download__1_-removebg-preview.png" alt="Logo Serviam" class="serviam-logo-img">
+            </a>
+            
+            <div class="ml-auto flex items-center">
+                <div class="hidden md:flex space-x-10">
+                    <a href="#main-content" class="nav-link">Isi Konten</a>
+                    <a href="studikasus.html" class="nav-link">Studi Kasus & UUD</a> <a href="#video-section" class="nav-link">Video PKWU</a> <a href="#references" class="nav-link">Sumber (Daftar Pustaka)</a>
+                    <a href="#credit" class="nav-link">Anggota Kelompok</a>
+                </div>
+                
+                <button id="mobile-menu-button" class="md:hidden text-white hover:text-var(--color-secondary) focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-900 shadow-xl">
+        <a href="#main-content" class="block px-4 py-3 text-white hover:bg-blue-800 nav-link border-b border-blue-950">Isi Konten</a>
+        <a href="studikasus.html" class="block px-4 py-3 text-white hover:bg-blue-800 nav-link border-b border-blue-950">Studi Kasus & UUD</a>
+        <a href="#video-section" class="block px-4 py-3 text-white hover:bg-blue-800 nav-link border-b border-blue-950">Video PKWU</a>
+        <a href="#references" class="block px-4 py-3 text-white hover:bg-blue-800 nav-link border-b border-blue-950">Sumber (Bibliografi)</a>
+        <a href="#credit" class="block px-4 py-3 text-white hover:bg-blue-800 nav-link">Kredit Kelompok</a>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <section id="title-content" class="pt-32 pb-24 text-center min-h-[70vh] flex flex-col justify-center items-center bg-white rounded-xl shadow-lg my-12">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-6xl sm:text-7xl font-extrabold text-gray-900 leading-tight mb-6 tracking-tight drop-shadow-xl">
+                    Hidup Konsumtif: <br> Dampaknya pada Gaya Hidup Remaja!
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 font-light mt-2">
+                    KELOMPOK 6
+                </p>
+                <div class="mt-10">
+                    <a href="#main-content" 
+                        class="inline-block px-8 py-3 bg-red-600 text-white font-semibold rounded-full shadow-lg hover:bg-red-700 transition duration-300 transform hover:scale-[1.05]">
+                        Baca Selengkapnya &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+<section id="main-content" class="py-16">
+    <h3 class="section-title text-4xl mb-12 text-center fade-in-up">Konsumerisme</h3>
+
+    <div class="max-w-5xl mx-auto text-lg text-gray-700 leading-relaxed space-y-10">
+
+        <!-- CARD 1 -->
+        <div class="content-card rounded-xl p-8 fade-in-up">
+            <h4 class="text-3xl font-bold text-gray-800 mb-4 border-b pb-2 border-gray-100">Kolonialisme di Indonesia (Dampak Sosial)</h4>
+            <p class="text-gray-700 mb-4 fade-in-up">
+                Dampak kolonialisme dan imperialisme di bidang sosial terlihat jelas melalui perubahan besar dalam struktur masyarakat Indonesia. Pada masa kolonial, muncul pelapisan sosial yang sangat tegas. Masyarakat terbagi menjadi tiga golongan utama, yaitu golongan Eropa yang menempati posisi tertinggi, golongan Timur Asing yang terdiri atas orang Tionghoa serta pendatang Asia lainnya, dan golongan pribumi yang berada pada posisi paling rendah dalam hierarki sosial.  
+                Selain perubahan dalam stratifikasi sosial, kolonialisme juga menciptakan bentuk mobilitas sosial baru. Pemerintah kolonial memindahkan tenaga kerja ke berbagai perkebunan di luar Jawa dan membuka banyak pabrik serta perusahaan. Kondisi ini melahirkan dua kelompok baru dalam masyarakat, yaitu golongan majikan sebagai pemilik modal dan golongan buruh sebagai tenaga kerja. Munculnya kedua kelompok ini membuat struktur sosial dan ekonomi masyarakat Indonesia menjadi lebih kompleks.  
+                Di bidang pendidikan, kolonialisme ikut memunculkan kelompok elit terpelajar. Untuk memenuhi kebutuhan pegawai pemerintahan, Belanda mendirikan banyak sekolah di berbagai kota. Dari lembaga pendidikan tersebut lahir kaum priyayi terdidik yang sebagian besar tinggal di daerah perkotaan. Walaupun jumlahnya tidak banyak, kelompok ini memegang peranan penting dalam tumbuhnya kesadaran nasional dan perkembangan gerakan pergerakan nasional di Indonesia.
+            </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="content-card rounded-xl p-8 fade-in-up">
+            <h4 class="text-3xl font-bold text-gray-800 mb-4 border-b pb-2 border-gray-100">Mulainya Konsumerisme di Indonesia karena Kolonialisme</h4>
+            <p class="text-gray-700 mb-4 fade-in-up">
+                Pada akhir masa kolonial, Belanda menyelenggarakan pameran dan pekan raya besar seperti Pasar Gambir dan Jaarmarkt untuk memperkuat hegemoni kolonial. Pameran ini menampilkan modernitas Barat seperti teknologi, ilmu pengetahuan, dan produk impor sebagai cara untuk melegitimasi kekuasaan Belanda serta menciptakan konsumen baru di kalangan pribumi.  
+                Awalnya, sesuai Politik Etis (1901), pameran difokuskan pada kerajinan lokal untuk meningkatkan industri pribumi. Namun setelah perang Eropa, fokus berubah menjadi promosi industrialisasi dan konsumsi barang Barat. Hiburan modern, lampu listrik, bioskop, dan pertunjukan mekanis menjadi daya tarik utama dan menarik kelas menengah pribumi yang sedang tumbuh.  
+                Pameran menjadi ruang interaksi budaya: Belanda berusaha “menjual” modernitas kolonial, tetapi pengunjung pribumi justru menegosiasikan makna modernitas itu untuk membentuk identitas kelas menengah Indonesia yang baru. Meskipun jumlah pengunjung tinggi, tidak berarti mereka menerima kolonialisme; banyak yang mengkritik pameran karena dianggap merusak budaya Jawa, mendorong konsumsi berlebihan, dan melemahkan moralitas.  
+                Pameran juga menimbulkan perdebatan tentang Westernisasi, terutama terkait perilaku perempuan dalam ruang publik yang campur gender.
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="content-card rounded-xl p-8 fade-in-up">
+            <h4 class="text-3xl font-bold text-gray-800 mb-4 border-b pb-2 border-gray-100">Konsumerisme di Indonesia di Zaman Sekarang</h4>
+
+            <p class="text-gray-700 mb-4 fade-in-up">
+                Konsumerisme di Indonesia semakin terlihat kuat seiring masuknya pengaruh budaya Barat yang meresap melalui film, musik, iklan, media sosial, dan perkembangan teknologi global. Budaya Barat yang sering menonjolkan gaya hidup modern, glamor, dan materialistis mendorong banyak masyarakat Indonesia untuk menilai keberhasilan dan kebahagiaan melalui kepemilikan barang-barang bermerek atau mengikuti tren terbaru. Fenomena ini membuat masyarakat, terutama generasi muda di kota besar, lebih memilih produk asing atau produk yang dianggap “kekinian”.
+            </p>
+
+            <!-- REFLEKSI BOX -->
+            <div class="p-8 bg-blue-50 rounded-lg border border-blue-200 mt-6">
+                <h4 class="text-2xl font-bold text-blue-800 mb-3">Refleksi</h4>
+
+                <p class="text-blue-700 mb-4">
+                    Dalam mempelajari konsep konsumerisme dan materialisme, kelompok kami tidak hanya memahami 
+                    definisinya, tetapi juga mencoba melihatnya secara lebih kritis. Konsumerisme yang berkembang 
+                    dalam masyarakat modern sering mendorong individu untuk mengukur nilai dirinya melalui barang 
+                    yang dibeli atau dimiliki. Materialisme menguatkan pola pikir bahwa kebahagiaan dan keberhasilan 
+                    dapat diraih melalui kepemilikan materi. Dari hasil diskusi, kami menyadari bahwa cara pandang 
+                    ini dapat menimbulkan gaya hidup yang tidak seimbang apabila tidak diiringi kesadaran dan kontrol diri.
+                </p>
+
+                <p class="text-blue-700 mb-4">
+                    Sikap kritis muncul ketika kami melihat bagaimana pola konsumsi masyarakat banyak dipengaruhi 
+                    oleh iklan, eksposur di media sosial, serta standar sosial yang menilai seseorang dari kemampuan 
+                    mengikuti tren. Gaya hidup seperti ini membawa dampak yang cukup beragam. Melalui pembahasan ini, 
+                    kelompok kami merasa bahwa konsumerisme perlu disikapi secara lebih kritis agar tidak beralih 
+                    menjadi beban dalam kehidupan.
+                </p>
+
+                <p class="text-blue-700 mb-4">
+                    Kelompok kami juga mencermati bahwa barang yang dibeli bukan hanya digunakan, tetapi juga 
+                    dipakai untuk membangun citra diri. Dalam konteks ini, ideologi konsumsi yang sering muncul adalah 
+                    bahwa “lebih banyak berarti lebih baik”, atau bahwa “barang tertentu mencerminkan kelas sosial”. 
+                    Kami melihat bahwa ideologi seperti ini dapat melemahkan nilai hidup yang lebih penting, seperti 
+                    kesederhanaan, tanggung jawab, dan kesadaran akan dampak sosial.
+                </p>
+
+                <p class="text-blue-700">
+                    Melalui proses literasi dan diskusi kelompok, kami menyimpulkan bahwa konsumerisme dan materialisme 
+                    bukan sepenuhnya hal yang negatif, tetapi keduanya memerlukan pemahaman mendalam agar dapat 
+                    dikendalikan. Kami belajar bahwa gaya hidup tidak harus dikendalikan oleh tren, citra sosial, 
+                    atau tekanan ekonomi, tetapi dapat dibentuk berdasarkan nilai-nilai yang lebih rasional dan seimbang.
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+        
+<section id="references" class="py-16 bg-white rounded-xl shadow-lg mb-8">
+    <h3 class="section-title text-4xl mb-12 text-center">Daftar Pustaka</h3>
+    <div class="max-w-4xl mx-auto text-base text-gray-700 leading-relaxed px-4">
+        </div>
+        
+        <ol class="list-decimal list-inside ml-4 space-y-4">
+            <li class="pl-2">Asmira, Esti. (2022). Making a spectacle of the colony: Producing and consuming Pasar Gambir in the Dutch East Indies. <em>Journal of Southeast Asian Studies</em>. Cambridge University Press & Assessment.</li>
+            <li class="pl-2">Asri, Fadhila Husna. (n.d.). Pola kolonisasi Pemerintah Kolonial Hindia Belanda di Lampung dan Mapili (1905–1942). <em>Candi: Jurnal Pendidikan dan Penelitian Sejarah</em>. Jurnal Universitas Sebelas Maret.</li>
+            <li class="pl-2">Harkantininsih, Naniek. (2014). <em>Pengaruh kolonialisme di Nusantara</em>. Jakarta: Pusat Arkeologi Nasional.</li>
+            <li class="pl-2">Lukito, Yulia Nurliani & Miranda, Fildza. (2018). Hybrid Architecture and Contested Space of Colonial Interaction: Colonial Exhibitions at Pasar Gambir of Batavia and Jaarmarkt of Surabaya. <em>IOP Conference Series: Earth and Environmental Science</em>, 213(1). https://doi.org/10.1088/1755-1315/213/1/012029.</li>
+            <li class="pl-2">Lukito, Yulia Nurliani. (2019). Colonial exhibitions, hybrid architecture, and the interpretation of modernity in the Dutch East Indies. <em>Journal of Cultural Geography</em>, 36(3), 291–316. https://doi.org/10.1080/08873631.2019.1624039.</li>
+            <li class="pl-2">Sitohang, Mawar & Bello, Petrus C.K.L. (2025). Konsumerisme dan korupsi: Perspektif budaya dan hukum. <em>Jurnal Hukum to-Ra: Hukum Untuk Mengatur dan Melindungi Masyarakat</em>, 11(2), 277–301. https://doi.org/10.55809/tora.v11i2.583.</li>
+            <li class="pl-2">Ufrida, Khudhriyatul & Harianto, Sugeng. (2022). Konsumerisme makanan siap saji sebagai gaya hidup remaja di Kota Surabaya: Studi kasus siswi SMA Muhammadiyah 4 Kota Surabaya. <em>Jurnal Analisa Sosiologi</em>, 11(1). Jurnal Universitas Sebelas Maret.</li>
+            <li class="pl-2">Van de Meer, Arnout H.C. (2017). <em>Performing Colonial Modernity</em>. Colby College.</li>
+            <li class="pl-2">https://tribratanewsntt.com/polda-ntt-ungkap-dua-kasus-pelanggaran-perlindungan-terhadap-program-pepemerintah</li>
+
+        </ol>
+    </div>
+</section>
+
+        <section id="video-section" class="py-16 bg-gray-50 rounded-xl shadow-lg mb-8">
+            <h3 class="section-title text-4xl mb-12 text-center">Video PKWU</h3>
+            <div class="max-w-5xl mx-auto p-4">
+                <div class="relative overflow-hidden w-full" style="padding-top: 56.25%">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl" 
+                        src="linkvideo.mp4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="credit" class="py-16 bg-gray-100 rounded-xl shadow-lg mb-8">
+            <h3 class="section-title text-4xl mb-12 text-center">Members</h3>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
+                
+            <div class="p-6 bg-white rounded-lg shadow-md border-t-4 border-blue-600 text-center">
+                <img src="Ivanka.jpg" alt="Foto Ivanka Clarissa Toddy" class="member-photo">
+                <p class="text-2xl font-bold text-gray-900 mb-1">Ivanka Clarissa Toddy</p>
+                <p class="text-sm font-semibold text-gray-500 mb-2">Literasi Informasi dan cari sumber</p>
+            </div>
+
+            <div class="p-6 bg-white rounded-lg shadow-md border-t-4 border-blue-600 text-center">
+                <img src="Kenneth.jpg" alt="Foto Kenneth Nathanael Hadisaputra" class="member-photo">
+                <p class="text-2xl font-bold text-gray-900 mb-1">Kenneth Nathanael Hadisaputra</p>
+                <p class="text-sm font-semibold text-gray-500 mb-2">Literasi Informasi dan cari sumber</p>
+            </div>
+
+            <div class="p-6 bg-white rounded-lg shadow-md border-t-4 border-blue-600 text-center">
+                <img src="Timothy.jpg" alt="Foto Timothy Hamonangan Sihombing" class="member-photo">
+                <p class="text-2xl font-bold text-gray-900 mb-1">Timothy Hamonangan Sihombing</p>
+                <p class="text-sm font-semibold text-gray-500 mb-2">Membuat Website</p>
+            </div>
+
+                
+                </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 py-8 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-300 text-sm">
+            <p class="mb-2 font-extrabold text-white text-base">Renstra</p>
+            <p class="mb-4 text-xs italic max-w-2xl mx-auto">
+                "Menjadi Pemimpin yang peduli, kreatif, dan berwawasan global."
+            </p>
+            <hr class="border-gray-700 my-4">
+            <p class="text-gray-500">&copy; 2025/2026 Proyek SAS Kolaberasi</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mainHeader = document.getElementById('main-header'); 
+            const mainNav = document.getElementById('main-nav'); 
+            const logoLink = document.getElementById('serviam-logo-link'); 
+            const logoImg = document.getElementById('serviam-logo-img'); 
+
+            button.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Tutup menu jika link menuju anchor atau file lain
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                });
+            });
+
+            let prevScrollpos = window.pageYOffset;
+            const scrollThreshold = 80; 
+
+            window.onscroll = function() {
+                const currentScrollPos = window.pageYOffset;
+                
+                // Shrinking Header
+                if (currentScrollPos > scrollThreshold) {
+                    if (prevScrollpos <= currentScrollPos) { 
+                        mainNav.classList.remove('py-4');
+                        mainNav.classList.add('py-2');
+                        logoLink.classList.add('shrunk');
+                        logoImg.classList.add('shrunk');
+                    }
+                } else {
+                    mainNav.classList.remove('py-2');
+                    mainNav.classList.add('py-4');
+                    logoLink.classList.remove('shrunk');
+                    logoImg.classList.remove('shrunk');
+                }
+                
+                // Hide/Show Header
+                if (prevScrollpos > currentScrollPos) {
+                    mainHeader.classList.remove('-translate-y-full'); 
+                    mainHeader.classList.add('translate-y-0'); 
+                } else {
+                    if (currentScrollPos > scrollThreshold) { 
+                        mainHeader.classList.remove('translate-y-0');
+                        mainHeader.classList.add('-translate-y-full'); 
+                        if (!menu.classList.contains('hidden')) {
+                            menu.classList.add('hidden');
+                        }
+                    }
+                }
+                prevScrollpos = currentScrollPos;
+            }
+        });
+    </script>
+</body>
+</html>

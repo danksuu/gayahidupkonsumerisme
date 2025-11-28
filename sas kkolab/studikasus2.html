@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studi Kasus: Konsumerisme & UUD - Kelompok 6 (Bootstrap)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+        /* Variabel Warna Utama untuk Kustomisasi */
+        :root {
+            --bs-primary: #1e3a8a; /* Biru Tua */
+            --bs-warning: #fcd34d; /* Kuning/Amber */
+        }
+        
+        body {
+            background-color: #f9fafb; /* Latar belakang sangat muda */
+            padding-top: 70px; /* Jarak untuk Fixed Navbar */
+        }
+
+        /* Navbar Background */
+        .navbar-custom {
+            background-color: var(--bs-primary) !important;
+            transition: all 0.3s ease;
+        }
+
+        /* Penekanan Judul (Mirip Garis Bawah di Tengah) */
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            color: var(--bs-primary);
+            font-weight: 800;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 100px;
+            height: 5px;
+            background-color: var(--bs-warning);
+            border-radius: 5px;
+        }
+        
+        /* Style Logo: Border & Padding diatur langsung di elemen img */
+        .serviam-logo {
+            border: 4px solid var(--bs-warning);
+            border-radius: 8px;
+            background-color: white;
+            padding: 5px;
+            height: 70px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        /* Style UUD Card */
+        .uud-card {
+            background-color: #e0f2fe; /* Light Blue 100 */
+            border-left: 5px solid var(--bs-primary);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow navbar-custom" id="main-navbar">
+            <div class="container-fluid container-lg">
+                <a class="navbar-brand py-0 me-5" href="cadangan.html">
+                    <img id="serviam-logo-img" src="download__1_-removebg-preview.png" alt="Logo Serviam" class="serviam-logo" style="height: 50px; padding: 3px; border-width: 2px;"> 
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="cadangan.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Studi Kasus & UUD</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cadangan.html#video-section">Video PKWU</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cadangan.html#references">Sumber (Daftar Pustaka)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cadangan.html#credit">Anggota Kelompok</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        
+        <div class="text-center mb-5">
+            <h3 class="section-title fs-2">Studi Kasus: Konsumerisme & Pelanggaran Hukum</h3>
+        </div>
+
+        <section id="kasus-detail" class="card shadow-lg border-danger border-start-0 border-end-0 border-top-0 border-5 my-4 bg-white">
+            <div class="card-body p-4 p-lg-5">
+                <h4 class="card-title text-danger mb-4 fs-3 fw-bold">Kasus Ganda: Penyelewengan Pangan di NTT 🍚⚖️</h4>
+                
+                <div class="text-center my-4">
+                    <img src="Kasus.jpg" alt="Ilustrasi kasus pemalsuan beras subsidi"
+                         class="img-fluid rounded shadow-lg border border-2 w-75">
+                    <p class="text-muted mt-2 fst-italic small">Foto Kasus</p>
+                </div>
+
+                <h5 class="text-secondary-emphasis mt-4 mb-3 pb-1 border-bottom">Kasus 1: Penjualan Beras Premium Rusak (Merek Topi Koki)</h5>
+                <p class="text-body-secondary mb-4">
+                    Dalam pengungkapan dua kasus pelanggaran perlindungan konsumen, Direktorat Reserse Kriminal Khusus (Ditreskrimsus) Polda Nusa Tenggara Timur (NTT) menunjukkan kinerjanya. Konferensi pers yang dipimpin oleh Karoops Polda NTT Kombes Pol Joni Afrizal Syarifuddin menegaskan dukungan Polri terhadap program pemerintah, khususnya Asta Cita Presiden Republik Indonesia, yang menekankan pentingnya ketahanan pangan dan perlindungan konsumen.</p>
+                <p class="text-body-secondary mb-4">
+                    Kasus pertama melibatkan penjualan beras premium merek Topi Koki yang rusak dan tidak layak konsumsi di sebuah retail modern di Kota Kupang. Tersangka RA, selaku pimpinan retail, menjual beras yang berisi banyak kutu tanpa memberikan informasi yang benar kepada konsumen. Barang bukti yang diamankan adalah 1,79 ton beras berbagai kemasan merek Topi Koki yang rusak. Berdasarkan hasil uji laboratorium dan keterangan ahli, produk tersebut dinyatakan tidak layak konsumsi. Tersangka RA dijerat dengan Pasal 62 ayat (1) jo Pasal 8 ayat (2) Undang-Undang Nomor 8 Tahun 1999 tentang Perlindungan Konsumen, dengan ancaman pidana penjara maksimal 5 tahun atau denda paling banyak Rp2 miliar.</p>
+
+                <h5 class="text-secondary-emphasis mt-4 mb-3">Analisis Dampak Kasus 2:</h5>
+                <p class="text-body-secondary mb-4">
+                    Kasus kedua terjadi di Pasar penpres, Kota Kupang, di mana pelaku M, seorang ibu rumah tangga, diduga menukar isi karung beras SPHP (Stabilisasi Pasokan dan Harga Pangan) milik Perum Bulog ke dalam karung beras bermerek "Super Cap Jeruk" untuk dijual dengan harga lebih tinggi, yaitu Rp13.000 per kilogram, padahal harga resmi beras SPHP hanya Rp11.300 per kilogram. Dari hasil penyidikan, pelaku telah menyalahgunakan sekitar 4 ton beras SPHP. Barang bukti yang diamankan meliputi 2,615 ton beras Cap Jeruk, 149 karung beras SPHP (total 750 kg), 111 karung kosong SPHP, 18 karung kosong Cap Jeruk, 1 unit mesin jahit merek NEWLONG, 1 pisau cutter hijau, serta dokumen izin usaha. Pelaku M dijerat dengan Pasal 62 ayat (1) jo Pasal 8 ayat (1) huruf e Undang-Undang Nomor 8 Tahun 1999 tentang Perlindungan Konsumen, dengan ancaman pidana penjara maksimal 5 tahun atau denda paling banyak Rp2 miliar.</p>
+                <p class="text-body-secondary mb-4">
+                    Polda NTT menegaskan komitmennya untuk terus mendukung program Asta Cita Presiden Republik Indonesia, khususnya di seluruh wilayah NTT, dengan memperkuat koordinasi dengan Bulog, Dinas Perdagangan, dan Dinas Pertanian agar distribusi pangan bersubsidi sampai tepat sasaran. Masyarakat diajak untuk turut aktif melapor bila menemukan praktik curang. Dengan sinergi antara Polri, pemerintah, dan masyarakat, diharapkan NTT dapat menjadi daerah yang aman, adil, dan sejahtera.</p>
+            </div>
+        </section>
+
+        <section id="uud-kaitan" class="uud-card shadow-lg my-4">
+            <h4 class="fs-4 fw-bold text-primary mb-3 d-flex align-items-center">
+                <svg class="bi me-2" width="24" height="24" fill="currentColor">
+                    <path d="M7 11.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-4-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-4-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 11a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM5 1.5A1.5 1.5 0 0 1 6.5 0h8A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 14.5zM6.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5z"/>
+                </svg>
+                Kaitan Kasus dengan UUD 1945
+            </h4>
+
+            <blockquote class="border-start border-4 border-info ps-3 py-2 mt-3 fst-italic small text-primary-emphasis bg-white p-3 rounded">
+                <p class="mb-3"><strong>1. Pasal 27 ayat (2)</strong><br>
+                “Tiap-tiap warga negara berhak atas pekerjaan dan penghidupan yang layak bagi kemanusiaan.”<br>
+                <span class="not-italic text-secondary">➡ Relevansi: Beras rusak dan mislabeling SPHP mengganggu hak masyarakat untuk memperoleh pangan layak.</span></p>
+
+                <p class="mb-3"><strong>2. Pasal 28H ayat (1)</strong><br>
+                “Setiap orang berhak hidup sejahtera lahir dan batin… memperoleh lingkungan hidup yang baik dan sehat.”<br>
+                <span class="not-italic text-secondary">➡ Relevansi: Beras berkutu/tidak layak konsumsi merugikan kesehatan dan akses pangan sehat.</span></p>
+
+                <p class="mb-3"><strong>3. Pasal 33 ayat (3)</strong><br>
+                “Bumi dan air dan kekayaan alam… dipergunakan untuk sebesar-besar kemakmuran rakyat.”<br>
+                <span class="not-italic text-secondary">➡ Relevansi: Beras merupakan komoditas strategis; penyalahgunaan beras subsidi melanggar prinsip kemakmuran rakyat.</span></p>
+
+                <p class="mb-3"><strong>4. Pasal 34 ayat (1) dan (2)</strong><br>
+                “Fakir miskin… dipelihara oleh negara.”<br>
+                <span class="not-italic text-secondary">➡ Relevansi: SPHP adalah program perlindungan rakyat kecil; penyelewengan berasnya merusak tujuan negara.</span></p>
+
+                <p class="mb-3"><strong>5. Alinea ke-4 Pembukaan UUD 1945</strong><br>
+                “Melindungi segenap bangsa Indonesia…”<br>
+                <span class="not-italic text-secondary">➡ Relevansi: Penindakan polisi terhadap penyalahgunaan beras merupakan bentuk perlindungan konsumen.</span></p>
+
+                <hr class="my-3">
+            </blockquote>
+        </section>
+                
+        <section id="kesimpulan" class="alert alert-warning shadow-lg border-start border-4 border-warning-subtle text-body-secondary my-4" role="alert">
+            <p class="fw-bold text-dark">KESIMPULAN KASUS:</p>
+            <p class="small">
+                Kasus pelanggaran perlindungan konsumen di NTT—mulai dari beras rusak hingga
+                penyalahgunaan beras subsidi SPHP—tidak hanya melanggar ketentuan hukum, tetapi
+                juga bertentangan dengan prinsip dasar dalam UUD 1945. Dampak kasus ini meliputi:
+                <br><br>
+                • Terganggunya hak masyarakat atas pangan layak, sehat, dan aman.<br>
+                • Rusaknya tujuan program SPHP yang seharusnya menyediakan pangan murah bagi rakyat.<br>
+                • Terhambatnya peran negara dalam mengelola komoditas strategis untuk kemakmuran umum.<br>
+                • Terancamnya hak masyarakat untuk memperoleh penghidupan yang layak.<br>
+                • Terganggunya kewajiban negara dalam melindungi rakyat dari praktik yang merugikan.<br><br>
+                Dengan demikian, kasus ini menegaskan pentingnya penegakan hukum yang tegas untuk
+                menjaga keadilan, kesejahteraan, serta perlindungan konsumen sesuai amanat UUD 1945.
+            </p>
+        </section>
+                
+    </main>
+
+    <footer class="bg-dark py-4 mt-5">
+        <div class="container text-center text-secondary small">
+            <p class="mb-2 fw-bolder text-white fs-6">Renstra</p>
+            <p class="mb-4 small fst-italic col-lg-6 mx-auto">
+                "Menjadi Pemimpin yang peduli, kreatif, dan berwawasan global."
+            </p>
+            <hr class="border-secondary my-4">
+            <p class="text-secondary">&copy; 2025/2026 Proyek SAS Kolaberasi</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
